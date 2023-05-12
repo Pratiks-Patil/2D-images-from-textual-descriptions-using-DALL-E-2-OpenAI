@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Images</title>
+    <style>
+        /* Center the container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        /* Style the images */
+        .image {
+            max-width: 400px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generated Images</h1>
+    {% if image_urls %}
+        <div class="container">
+        {% for url in image_urls %}
+            <img class="image" src="{{ url }}" alt="Generated Image">
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>No images generated.</p>
+    {% endif %}
+</body>
+</html>

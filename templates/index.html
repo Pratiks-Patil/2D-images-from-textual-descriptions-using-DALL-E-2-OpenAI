@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Images from Text</title>
+    <style>
+        /* Set background color */
+        body {
+            background-color: #f7f7f7;
+        }
+        /* Center form and add box shadow */
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        /* Style heading */
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 40px;
+            color: #333;
+        }
+        /* Style label */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #666;
+        }
+        /* Style input field */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        /* Style button */
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        /* Change button color on hover */
+        button[type="submit"]:hover {
+            background-color: #666;
+        }
+        /* Add animation to button */
+        .btn-animation {
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Generate Images from Text</h1>
+    <form action="{{ url_for('generate') }}" method="post">
+        <label for="description">Enter a description:</label>
+        <input type="text" id="description" name="description" required>
+        <button type="submit" class="btn-animation">Generate Image</button>
+    </form>
+</body>
+</html>
